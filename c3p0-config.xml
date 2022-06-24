@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<c3p0-config>
+
+    <named-config name="intergalactoApp">
+
+        <!--   建立连接的4个基本信息     -->
+        <!--    属性的name参照原有的命名方式着来，小驼峰。
+        名字参照quickstart的写法，get后面的就是    -->
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">
+            jdbc:mysql://localhost:3306/test?rewriteBatchedStatements=true
+        </property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+
+        <!--    连接数一次性增加申请数量    -->
+        <property name="acquireIncrement">5</property>
+        <!--初始化连接数-->
+        <property name="initialPoolSize">5</property>
+        <!--    连接池维护的最小连接数    -->
+        <property name="minPoolSize">10</property>
+        <!--    连接池维护的最大连接数    -->
+        <property name="maxPoolSize">100</property>
+        <!--   维护最多Statement个数     -->
+        <property name="maxStatements">50</property>
+        <!--   每个连接最多Statement个数     -->
+        <property name="maxStatementsPerConnection">5</property>
+
+    </named-config>
+</c3p0-config>
